@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        #intro{
+            color: rgb(255, 255, 255);
+        }
+        #lol{
+            width: 70%;
+            margin: 80px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid rgb(104, 104, 104);
+            background-color: rgb(255, 160, 218);
+            margin: auto;
+        }
+        body{
+            margin: auto;
+        }
+        .img{
+            width: 80%;
+            padding: 20px;
+            border-radius: 200px;
+        }
+        #nav{
+            display: flex;
+            align-items: center;
+            margin: auto;
+            background-color: rgb(169, 255, 255);
+            color: black;
+            justify-content: space-evenly;
+        }
+        #nav > a{
+            background-color: rgb(205, 74, 245);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: larger;
+            text-decoration: none;
+            color: antiquewhite;
+            padding: 10px;
+        }
+        #nav > a:hover{
+            background-color: red;
+        }
+        #logo{
+            background-color: rgb(25, 3, 32);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: larger;
+            text-decoration: none;
+            color: antiquewhite;
+            padding: 10px;
+        }
+        #table{
+            margin: auto;
+            margin-top: 100px;
+            font-size: larger;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h3 id="logo">{{logo}}</h3>
+        {% for i in course %}
+        <a href="" target="_blank" rel="noopener noreferrer">{{i}}</a>
+        {% endfor %}
+    </nav>
+
+
+
+    <div id="lol">
+        <h1 id="intro">{{intro}}</h1>
+        <img src="{{img1}}" alt="" class="img">
+        <img src="{{img2}}" alt="" class="img">
+    </div>
+    <table border="1" cellpadding="10" id="table">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Class</th>
+
+        </tr>
+        {% for d in std %}
+        <tr>
+           <th>{{d.name}}</th>
+           <th>{{d.Phone}}</th>
+           <th>{{d.class}}</th>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div>
+        <h1>Is Prime?</h1>
+        {% for i in numbers %}
+            {% if i  %}
+                <h3>{{ i }}</h3>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

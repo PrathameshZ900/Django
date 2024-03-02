@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-12">
+    <form action="" method="post"> <!-- Changed method to "post" -->
+        {% csrf_token %}
+        <label for="num1">Value1</label>
+        <input type="text" name="num1" class="form-control" id="num1" value="{% if n1 %}{{ n1 }}{% endif %}"> <!-- Added id for accessibility and conditionally set value -->
+        <label for="num2">Value2</label>
+        <input type="text" name="num2" class="form-control" id="num2" value="{% if n2 %}{{ n2 }}{% endif %}"> <!-- Added id for accessibility and conditionally set value -->
+        <div class="pt-4">
+            <button type="submit" class="btn btn-primary">ADD</button>
+        </div>
+    </form>
+    
+    <!-- Display the result only if it exists -->
+    {% if ans %}
+        <label for="sum">SUM</label>
+        <input type="text" value="{{ ans }}" id="sum" readonly> <!-- Added id for accessibility and set to readonly -->
+    {% endif %}
+
+    <!-- Display error message if exists -->
+    {% if error %}
+        <p class="text-danger">{{ error }}</p>
+    {% endif %}
+</div>
+
+{% endblock %}

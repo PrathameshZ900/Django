@@ -1,0 +1,61 @@
+<!-- userform.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/submit/" method="post">
+    {% csrf_token %}
+    <h2>User Registration</h2>
+    
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+{% if username %}
+<p>Username: {{ username }}</p>
+{% endif %}
+{% if email %}
+<p>Email: {{ email }}</p>
+{% endif %}
+{% if birthdate %}
+<p>Birthdate: {{ birthdate }}</p>
+{% endif %}
+{% if gender %}
+<p>Gender: {{ gender }}</p>
+{% endif %}
+
+{% endblock %}
