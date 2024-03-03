@@ -1,0 +1,85 @@
+.col-12 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+}
+
+.col-12 > div {
+    background-color: #c47f7f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+body {
+    font-family: Arial, sans-serif; /* Setting a default font family */
+    margin: 0; /* Removing default margin */
+}
+nav{
+    background-color: rgb(62, 38, 38);
+    height: 30px;
+    
+   
+}
+nav ul {
+    list-style-type: none; /* Removing default list styles */
+    padding: 0; /* Removing default padding */
+    margin: 0; /* Removing default margin */
+}
+
+nav ul li {
+    display: inline; /* Displaying list items horizontally */
+}
+
+nav ul li a {
+    text-decoration: none; /* Removing default underline from links */
+    padding: 10px; /* Adding padding to links for better spacing */
+    color: #c1c1c1; /* Setting link color */
+}
+
+nav ul li a:hover {
+    background-color: #d66161; /* Adding hover effect */
+    border-radius: 5px; /* Adding rounded corners on hover */
+}
+
+.col-12 {
+    width: 70%;
+    display: grid;
+    margin: auto;
+    padding-bottom: 300px;
+    grid-template-columns: repeat(3, 1fr); /* Creating 3 columns with equal width */
+    grid-template-rows: repeat(2, auto); /* Creating 2 rows with automatic height */
+    gap: 20px; /* Adding gap between grid items */
+}
+.col-12 > div > h1{
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+.col-12 > div > h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.col-12 > div {
+    background-color: #e6cdcd; /* Setting background color for grid items */
+    padding: 20px; /* Adding padding to grid items */
+    border-radius: 8px; /* Adding rounded corners to grid items */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding box shadow to grid items */
+
+}
+
+h1 {
+    grid-column: 1 / -1; /* Spanning the h1 across all columns */
+    text-align: center; /* Centering the text */
+    margin-bottom: 20px; /* Adding margin at the bottom */
+}
+footer{
+    background-color: rgb(62, 38, 38);
+}

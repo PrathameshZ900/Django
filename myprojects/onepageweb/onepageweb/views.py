@@ -1,6 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 
 from django.shortcuts import render
+from .forms import UsersForm
 
 def about_us(request,idd):
     return HttpResponse(idd+" Welcome to my Django Project")
@@ -210,3 +211,37 @@ def action(request):
             data['error'] = "Invalid input. Please enter valid numbers."
        
     return render(request,"action.html",data)
+
+
+
+def formDjango(request):
+    if request.method == 'POST':
+        form = UsersForm(request.POST)
+        if form.is_valid():
+            # Retrieving form data from validated form
+            username = form.cleaned_data.get("UserName")
+            email = form.cleaned_data.get("E_mail")
+            password = form.cleaned_data.get("Password")
+            birthdate = form.cleaned_data.get("Birthdate")
+            gender = form.cleaned_data.get("Gender")
+
+            # Printing form data
+            print("UserName:", username)
+            print("E-mail:", email)
+            print("Password:", password)
+            print("Birthdate:", birthdate)
+            print("Gender:", gender)
+
+            # You can perform further processing here, such as saving data to a database
+
+            return render(request, "success.html", {'username': username})  # Redirect to success page
+        else:
+            print("Form is not valid")
+    else:
+        form = UsersForm()
+
+    return render(request, "formdjango.html", {'title': "User Form", 'form': form})
+
+
+def service(request):
+    return render(request,"service.html")
