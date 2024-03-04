@@ -5,6 +5,10 @@
     grid-template-rows: repeat(2, auto);
     gap: 20px;
 }
+#okk{
+    width: 80%;
+    margin: auto;
+}
 
 .col-12 > div {
     background-color: #c47f7f;
