@@ -1,11 +1,8 @@
 from django.contrib import admin
-from service.models import service
+from service.models import ServiceItem
 
-class serviceAdmin(admin.ModelAdmin):
-    list_display=('icon','title','dis')
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('icon', 'title', 'dis')
 
-
-admin.site.register(service,serviceAdmin)
-
-
+admin.site.register(ServiceItem, ServiceAdmin)
 # Register your models here.

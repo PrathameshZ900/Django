@@ -49,7 +49,7 @@ nav ul li a:hover {
 }
 
 .col-12 {
-    width: 70%;
+
     display: grid;
     margin: auto;
     padding-bottom: 300px;
@@ -68,7 +68,7 @@ nav ul li a:hover {
 }
 
 .col-12 > div {
-    background-color: #e6cdcd; /* Setting background color for grid items */
+    background-color: #d52727; /* Setting background color for grid items */
     padding: 20px; /* Adding padding to grid items */
     border-radius: 8px; /* Adding rounded corners to grid items */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding box shadow to grid items */

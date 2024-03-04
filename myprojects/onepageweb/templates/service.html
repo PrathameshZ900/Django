@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/static/header.css">
     <link rel="stylesheet" href="/static/footer.css">
     <link rel="stylesheet" href="/static/service.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
     <nav>
@@ -17,32 +19,20 @@
       <li><a href="#">Contact</a></li>
     </ul>
     </nav>
-    <div class="col-12">
+    <div class="col-12" id="okk">
+
+
         <h1>Services</h1>
+
+        {% for n in servicedata %}
+        
         <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
+            <span class="{{n.icon}}"></span>
+        <h2>{{n.title}}</h2>
+            {{n.dis}}
         </div>
-        <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
-        </div>
-        <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
-        </div>
-        <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
-        </div>
-        <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
-        </div>
-        <div>
-            <h2>Actionm</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem amet error, quidem quia placeat quas at harum in qui ea.
-        </div>
+        {% endfor %}
+
     </div>
     {% include "footer.html" %}
 </body>

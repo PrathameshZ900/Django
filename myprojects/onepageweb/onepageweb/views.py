@@ -2,6 +2,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 
 from django.shortcuts import render
 from .forms import UsersForm
+from service.models import ServiceItem
 
 def about_us(request,idd):
     return HttpResponse(idd+" Welcome to my Django Project")
@@ -243,5 +244,13 @@ def formDjango(request):
     return render(request, "formdjango.html", {'title': "User Form", 'form': form})
 
 
-def service(request):
-    return render(request,"service.html")
+
+
+
+
+def service_view(request):
+    servicedata = ServiceItem.objects.all()
+    data = {
+        'servicedata': servicedata,
+    }
+    return render(request, "service.html", data)
