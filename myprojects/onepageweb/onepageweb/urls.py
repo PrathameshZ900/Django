@@ -34,6 +34,7 @@ urlpatterns = [
     path("action/",views.action,name="action"),
     path("formdjango/",views.formDjango),
     path("service/",views.service_view),
+    path("news/",views.news),
     
 
 ]

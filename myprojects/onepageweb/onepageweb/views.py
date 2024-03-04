@@ -249,8 +249,11 @@ def formDjango(request):
 
 
 def service_view(request):
-    servicedata = ServiceItem.objects.all().order_by('title')
+    servicedata = ServiceItem.objects.all().order_by('title')[2:9]
     data = {
         'servicedata': servicedata,
     }
     return render(request, "service.html", data)
+
+def news(request):
+    return render(request,"news.html")    
