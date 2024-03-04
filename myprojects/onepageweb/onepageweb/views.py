@@ -249,7 +249,7 @@ def formDjango(request):
 
 
 def service_view(request):
-    servicedata = ServiceItem.objects.all()
+    servicedata = ServiceItem.objects.all().order_by('title')
     data = {
         'servicedata': servicedata,
     }

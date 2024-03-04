@@ -1,4 +1,5 @@
 .col-12 {
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -68,7 +69,7 @@ nav ul li a:hover {
 }
 
 .col-12 > div {
-    background-color: #d52727; /* Setting background color for grid items */
+    background-color: #ebbdbd; /* Setting background color for grid items */
     padding: 20px; /* Adding padding to grid items */
     border-radius: 8px; /* Adding rounded corners to grid items */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding box shadow to grid items */
