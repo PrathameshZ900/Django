@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UsersForm
 from service.models import ServiceItem
+from news.models import NewsArticle
 
 def about_us(request,idd):
     return HttpResponse(idd+" Welcome to my Django Project")
@@ -255,5 +256,12 @@ def service_view(request):
     }
     return render(request, "service.html", data)
 
+
+
 def news(request):
-    return render(request,"news.html")    
+    newsdata = NewsArticle.objects.all().order_by("headline")[:3]
+    data = {
+        'newsdata': newsdata,
+    }
+    return render(request, "news.html", data)
+

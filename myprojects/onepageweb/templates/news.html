@@ -4,4 +4,15 @@
 
 <!-- Your content goes here -->
 
+<div class="col-12">
+    <h1>Headlines</h1>
+    {% for n in data %}
+    <div class="blocks">
+        <h3>{{ n.headline }}</h3>
+        {{ n.dis }}
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
+
