@@ -3,13 +3,13 @@
 {% block content %}
 
 <!-- Your content goes here -->
-
+<h1>Headlines</h1>
 <div class="col-12">
-    <h1>Headlines</h1>
-    {% for n in data %}
+    
+    {% for n in newsdata %}
     <div class="blocks">
-        <h3>{{ n.headline }}</h3>
-        {{ n.dis }}
+        <h3>{{ n.headline | safe }}</h3>
+        <div>{{ n.dis | safe }}</div>
     </div>
     {% endfor %}
 </div>
