@@ -259,7 +259,7 @@ def service_view(request):
 
 
 def news(request):
-    newsdata = NewsArticle.objects.all().order_by("headline")[:3]
+    newsdata = NewsArticle.objects.all().order_by("headline")
     data = {
         'newsdata': newsdata,
     }

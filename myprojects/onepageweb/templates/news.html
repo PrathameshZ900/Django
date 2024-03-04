@@ -4,14 +4,17 @@
 
 <!-- Your content goes here -->
 <h1>Headlines</h1>
-<div class="col-12">
+<div id="okk">
+
+    <div class="col-12">
     
-    {% for n in newsdata %}
-    <div class="blocks">
-        <h3>{{ n.headline | safe }}</h3>
-        <div>{{ n.dis | safe }}</div>
+        {% for n in newsdata %}
+        <div class="blocks">
+            <h3>{{ n.headline | safe }}</h3>
+            {{ n.dis | safe }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 
 {% endblock %}
