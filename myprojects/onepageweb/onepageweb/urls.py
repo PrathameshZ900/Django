@@ -35,6 +35,8 @@ urlpatterns = [
     path("formdjango/",views.formDjango),
     path("service/",views.service_view),
     path("news/",views.news),
+    path("newsdetail/<newsid>",views.newsdetail),
+
     
 
 ]

@@ -3,7 +3,20 @@
 {% block content %}
 
 <!-- Your content goes here -->
-<h1>Headlines</h1>
+
+
+<marquee behavior="" direction="" style="background-color: antiquewhite; color: black;" onmouseover="stop()" onmouseout="start()">
+    <span id="ans" style="display: flex;"></span>
+    <script>
+        var ans = document.getElementById("ans");
+        var c=1;
+        {% for i in headline %}
+            ans.innerHTML += c + ") " + `<a href="/newsdetail/{{i.id}}" style="text-decoration: none; color:black;">{{ i.headline | safe }}</a>&nbsp; &nbsp;`;
+            c+=1;
+        {% endfor %}
+    </script>
+</marquee>
+<h1 id="heading" style="display: block; text-align: center;">Headlines</h1>
 <div id="okk">
 
     <div class="col-12">

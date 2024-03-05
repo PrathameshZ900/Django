@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Your content goes here -->
+
+
+
+<h1>Breaking Newss!!!</h1>
+
+<div class="col-12" id="newsdetail">
+<div >    <h1 id="heading" style="display: block; text-align: center;">{{newsdetail.headline | safe }}</h1>
+    {{newsdetail.dis | safe }}
+</div>
+</div>
+
+
+
+{% endblock %}
