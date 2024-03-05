@@ -250,12 +250,16 @@ def formDjango(request):
 
 
 def service_view(request):
-
-    servicedata = ServiceItem.objects.all().order_by('title')[2:9]
+    servicedata = ServiceItem.objects.all().order_by('title')
+    st = request.GET.get("titlename")
+    if st:
+        servicedata = ServiceItem.objects.filter(title__icontains=st)
     data = {
         'servicedata': servicedata,
+        'search_term': st,  # Pass the search term to the template
     }
     return render(request, "service.html", data)
+
 
 
 

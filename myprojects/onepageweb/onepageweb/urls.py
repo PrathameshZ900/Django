@@ -33,7 +33,7 @@ urlpatterns = [
     path("post/",views.sumpost),
     path("action/",views.action,name="action"),
     path("formdjango/",views.formDjango),
-    path("service/",views.service_view),
+    path("service/",views.service_view,name='service_view'),
     path("news/",views.news),
     path("newsdetail/<newsid>",views.newsdetail),
 

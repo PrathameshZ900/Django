@@ -6,13 +6,15 @@
 
 
 
-<h1>Breaking Newss!!!</h1>
+<h1 style="text-align: center;">Breaking News!!!</h1>
 
-<div class="col-12" id="newsdetail">
-<div >    <h1 id="heading" style="display: block; text-align: center;">{{newsdetail.headline | safe }}</h1>
-    {{newsdetail.dis | safe }}
+<div class="col-12" id="newsdetail" style="width: 50%; margin: auto; background-color: antiquewhite; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <div style="margin: auto;">
+        <h1 style="text-align: center; font-size: 24px;">{{ newsdetail.headline | safe }}</h1>
+        <div style="font-size: 16px;">{{ newsdetail.dis | safe }}</div>
+    </div>
 </div>
-</div>
+
 
 
 
