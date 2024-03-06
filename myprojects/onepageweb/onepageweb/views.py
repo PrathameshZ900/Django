@@ -5,6 +5,9 @@ from .forms import UsersForm
 from service.models import ServiceItem
 from news.models import NewsArticle
 
+from django.core.paginator import Paginator
+
+
 def about_us(request,idd):
     return HttpResponse(idd+" Welcome to my Django Project")
 
@@ -266,8 +269,19 @@ def service_view(request):
 def news(request):
     newsdata = NewsArticle.objects.all().order_by("headline")
     marqueedata = NewsArticle.objects.all().order_by("headline")
+    
+
+    p=Paginator(newsdata,2)
+    p_number=request.GET.get('page')
+    finaldata=p.get_page(p_number)
+
+
+
+
+
+
     data = {
-        'newsdata': newsdata,
+        'newsdata': finaldata,
         'headline':marqueedata
     }
     return render(request, "news.html", data)
@@ -277,3 +291,5 @@ def newsdetail(request, newsid):
     newsdetail = NewsArticle.objects.get(news_slug=slug)
     data = {'newsdetail': newsdetail}
     return render(request, "newsdetail.html", data)
+
+
