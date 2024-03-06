@@ -11,7 +11,7 @@
         var ans = document.getElementById("ans");
         var c=1;
         {% for i in headline %}
-            ans.innerHTML += c + ") " + `<a href="/newsdetail/{{i.id}}" style="text-decoration: none; color:black;">{{ i.headline | safe }}</a>&nbsp; &nbsp;`;
+            ans.innerHTML += c + ") " + `<a href="/newsdetail/{{i.news_slug}}" style="text-decoration: none; color:black;">{{ i.headline | safe }}</a>&nbsp; &nbsp;`;
             c+=1;
         {% endfor %}
     </script>

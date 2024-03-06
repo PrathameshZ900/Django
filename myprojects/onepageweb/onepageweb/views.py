@@ -274,6 +274,6 @@ def news(request):
 
 
 def newsdetail(request, newsid):
-    newsdetail = NewsArticle.objects.get(id=newsid)
+    newsdetail = NewsArticle.objects.get(news_slug=slug)
     data = {'newsdetail': newsdetail}
     return render(request, "newsdetail.html", data)
