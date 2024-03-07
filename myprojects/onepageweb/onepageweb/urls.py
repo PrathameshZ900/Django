@@ -36,6 +36,9 @@ urlpatterns = [
     path("service/",views.service_view,name='service_view'),
     path("news/",views.news),
     path("newsdetail/<news_slug>",views.newsdetail),
+    path("savecontact/",views.savecontact,name='savecontact'),
+
+
 
     
 

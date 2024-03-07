@@ -4,7 +4,7 @@ from django.shortcuts import render
 from .forms import UsersForm
 from service.models import ServiceItem
 from news.models import NewsArticle
-
+from contact.models import Contact
 from django.core.paginator import Paginator
 
 
@@ -265,24 +265,20 @@ def service_view(request):
 
 
 
-
 def news(request):
     newsdata = NewsArticle.objects.all().order_by("headline")
     marqueedata = NewsArticle.objects.all().order_by("headline")
     
-
-    p=Paginator(newsdata,2)
-    p_number=request.GET.get('page')
-    finaldata=p.get_page(p_number)
-
+    paginator = Paginator(newsdata, 2)
+    page_number = request.GET.get('page')
+    finaldata = paginator.get_page(page_number)
+    totalpage = paginator.num_pages
     
-
-
-
-
     data = {
         'newsdata': finaldata,
-        'headline':marqueedata
+        'headline': marqueedata,
+        'totalpage': totalpage,
+        'totalpagelist': range(1, totalpage + 1)  # Generate a list of page numbers from 1 to totalpage
     }
     return render(request, "news.html", data)
 
@@ -291,5 +287,18 @@ def newsdetail(request, newsid):
     newsdetail = NewsArticle.objects.get(news_slug=slug)
     data = {'newsdetail': newsdetail}
     return render(request, "newsdetail.html", data)
+
+def savecontact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        website = request.POST.get("website")
+        message = request.POST.get("message")
+
+        en = Contact(name=name, email=email, phone=phone, website=website, message=message)
+        en.save()
+
+    return render(request, "contact.html")
 
 
