@@ -275,7 +275,7 @@ def news(request):
     p_number=request.GET.get('page')
     finaldata=p.get_page(p_number)
 
-
+    
 
 
 

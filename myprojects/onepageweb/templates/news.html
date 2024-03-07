@@ -16,8 +16,18 @@
         {% endfor %}
     </script>
 </marquee>
+
+
+
 <h1 id="heading" style="display: block; text-align: center;">Headlines</h1>
-<div id="okk">
+
+
+
+
+
+
+
+<div id="okk" style="margin-bottom: 30px;">
 
     <div class="col-12">
     
@@ -29,6 +39,21 @@
         {% endfor %}
     </div>
 </div>
+
+
+<nav aria-label="Page navigation example" style="background-color: rgb(255, 221, 176); padding: 20px; margin-bottom: 20px;">
+    <ul class="pagination">
+        {% if newsdata.has_previous %}
+        <li class="page-item"><a class="page-link" href="/news/?page=1" tabindex="-1">First</a></li>
+        <li class="page-item"><a class="page-link" href="/news/?page={{ newsdata.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% if newsdata.has_next %}
+        <li class="page-item"><a class="page-link" href="/news/?page={{ newsdata.next_page_number }}">Next</a></li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="/news/?page={{ newsdata.paginator.num_pages }}">Last</a></li>
+    </ul>
+</nav>
+
 
 {% endblock %}
 
